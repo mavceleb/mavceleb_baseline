@@ -5,7 +5,7 @@ Baseline code for v2 of MAV-Celeb dataset based on _'Fusion and Orthogonal Proje
 ### Task
 Face-voice association is established in cross-modal verification task. The goal of the cross-modal verification task is to verify if, in a given single sample with both a face and voice, both belong to the same identity. In addition, we analyze the impact of multiple of languages on cross-modal verification task.
 <p align='center'>
-  <img src='https://github.com/mavceleb/mavceleb_baseline/blob/main/images/challenge_task_diag_r.jpg' width=60% height=60%>
+  <img src='https://github.com/mavceleb/mavceleb_baseline/blob/main/images/challenge_task_diag_r.jpg' width=70% height=70%>
 </p>
 
 ### Setup
