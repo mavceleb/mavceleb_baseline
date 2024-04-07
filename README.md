@@ -43,11 +43,11 @@ Pre extracted features can be downloaded [here](https://drive.google.com/drive/f
 ├── v2_models/<br>
 │ ├── English_fop_model
 │ │ ├── checkpoints.pth.tar
-│ ├── Hindi_fop_model<br>
+│ ├── Hindi_fop_model
 │ │ ├── checkpoints.pth.tar
 ├── main.py
 ├── online_evaluation.py
-├── retrieval.py/<br>
-├── test.py/<br>
+├── retrieval.py
+├── test.py
 ```
 
