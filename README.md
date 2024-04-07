@@ -34,19 +34,19 @@ Pre extracted features can be downloaded [here](https://drive.google.com/drive/f
 
 ## Hierarchy:
 ```
-├── feats/<br>
-│ ├── v2/<br>
-│ │ ├── English_feats<br>
-│ │ │ ├── .csv and .txt files<br>
+├── feats
+│ ├── v2
+│ │ ├── English_feats
+│ │ │ ├── .csv and .txt files
 │ │ ├── Hindi_feats<br>
-│ │ │ ├── .csv and .txt files<br>
+│ │ │ ├── .csv and .txt files
 ├── v2_models/<br>
-│ ├── English_fop_model/<br>
-│ │ ├── checkpoints.pth.tar<br>
+│ ├── English_fop_model
+│ │ ├── checkpoints.pth.tar
 │ ├── Hindi_fop_model<br>
-│ │ ├── checkpoints.pth.tar<br>
-├── main.py/<br>
-├── online_evaluation.py/<br>
+│ │ ├── checkpoints.pth.tar
+├── main.py
+├── online_evaluation.py
 ├── retrieval.py/<br>
 ├── test.py/<br>
 ```
