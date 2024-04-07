@@ -38,9 +38,9 @@ Pre extracted features can be downloaded [here](https://drive.google.com/drive/f
 │ ├── v2
 │ │ ├── English_feats
 │ │ │ ├── .csv and .txt files
-│ │ ├── Hindi_feats<br>
+│ │ ├── Hindi_feats
 │ │ │ ├── .csv and .txt files
-├── v2_models/<br>
+├── v2_models
 │ ├── English_fop_model
 │ │ ├── checkpoints.pth.tar
 │ ├── Hindi_fop_model
