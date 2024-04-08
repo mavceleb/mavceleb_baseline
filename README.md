@@ -8,6 +8,51 @@ Face-voice association is established in cross-modal verification task. The goal
   <img src='https://github.com/mavceleb/mavceleb_baseline/blob/main/images/challenge_task_diag_r.jpg' width=70% height=70%  style="border-radius: 25px">
 </p>
 
+<table border="1" align='center'>
+  <tr>
+    <td colspan="4" align="center" ><b>V2-EH</b></td>
+  </tr>
+  <tr>
+    <td>Method</td>
+    <td>Configuration</td>
+    <td align='center'>English test<br>(EER)</td>
+    <td align='center'>Hindi test<br>(EER)</td>
+  </tr>
+  <tr>
+    <td rowspan="2" align="center">FOP</td>
+    <td>English train</td>
+    <td><b>20.8</b></td>
+    <td>24.0</td>
+  </tr>
+  <tr>
+    <td>Hindi train</td>
+    <td>24.0</td>
+    <td><b>19.3</b></td>
+  </tr>
+  <tr>
+    <td colspan="4" align="center"><b>V1-EU</b></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td align='center'>English test<br>(EER)</td>
+    <td align='center'>Urdu test<br>(EER)</td>
+  </tr>
+  <tr>
+    <td rowspan="2" align="center">FOP</td>
+    <td>English train</td>
+    <td><b>29.3</b></td>
+    <td>37.9</td>
+  </tr>
+  <tr>
+    <td>Urdu train</td>
+    <td>40.4</td>
+    <td><b>25.8</b></td>
+  </tr>
+</table>
+
+
+
 ## Evaluation Protocol
 The aim is to study the impact of language on speaker recognition and face-voice assoication methods. For this we train a model X on one language (English) then test on same language (English) and unheard language (Hindi). Similarly we train a model Y on one language (Hindi) then test the model on same language (Hindi) and unheard language (English) as shown in figure below. It is also important to note that the test identities are also unheard by the network meaning the test set is disjoint from the train network. For example: v2 has 84 identities both having English and Hindi voice samples. We have separated 6 identities for test set while leverage reamining for training the model.<br>
 
