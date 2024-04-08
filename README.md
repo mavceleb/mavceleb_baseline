@@ -50,22 +50,23 @@ bowsaf5e 1.6578
 ```
 
 ## Hierarchy:
-├── feats/<br>
-│ ├── v2/<br>
-│ │ ├── English_feats<br>
-│ │ │ ├── .csv and .txt files<br>
-│ │ ├── Hindi_feats<br>
-│ │ │ ├── .csv and .txt files<br>
-├── v2_models/<br>
-│ ├── English_fop_model/<br>
-│ │ ├── checkpoints.pth.tar<br>
-│ ├── Hindi_fop_model<br>
-│ │ ├── checkpoints.pth.tar<br>
-├── main.py/<br>
-├── online_evaluation.py/<br>
-├── retrieval.py/<br>
-├── test.py/<br>
-
+```
+├── feats
+│ ├── v2
+│ │ ├── English_feats
+│ │ │ ├── .csv and .txt files
+│ │ ├── Hindi_feats
+│ │ │ ├── .csv and .txt files
+├── v2_models
+│ ├── English_fop_model
+│ │ ├── checkpoints.pth.tar
+│ ├── Hindi_fop_model
+│ │ ├── checkpoints.pth.tar
+├── main.py
+├── online_evaluation.py
+├── retrieval.py
+├── test.py
+```
 
 # Setup
 We have used anaconda for setting up the environemnt for our experiments:
