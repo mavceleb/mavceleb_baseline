@@ -76,7 +76,7 @@ The raw data and train/test splits can be downloaded [here.](https://drive.googl
 
 #### Submission
 
-We provide both train and test splits with ground truth for v2 of MAV-Celeb dataset. Participants can use this split for fine-tuning their method. However, for v1 the test files are in format as below:
+We provide both train and test splits of MAV-Celeb dataset. For v2 and v1, the test files are in format as below:
 ```
 ysuvkz41 voices/English/00000.wav faces/English/00000.jpg 
 tog3zj45 voices/English/00001.wav faces/English/00001.jpg 
