@@ -17,7 +17,6 @@ from scipy import random
 from sklearn import preprocessing
 import torch.nn.functional as F
 import torch.nn as nn
-import online_evaluation
 from tqdm import tqdm
 
 # In[0]
@@ -74,7 +73,7 @@ def init_weights(m):
         torch.nn.init.xavier_uniform(m.weight)
         m.bias.data.fill_(0.01)
 
-def main(face_train, voice_train, train_label, face_test, voice_test):
+def main(face_train, voice_train, train_label):
     
     n_class = 64 if FLAGS.ver == 'v1' else 78
     model = FOP(FLAGS, face_train.shape[1], voice_train.shape[1], n_class)
@@ -120,22 +119,18 @@ def main(face_train, voice_train, train_label, face_test, voice_test):
     n_parameters = sum([p.data.nelement() for p in model.parameters()])
     print('  + Number of params: {}'.format(n_parameters))
     
-    eer_list = []
     epoch=1
     num_of_batches = (len(train_label) // FLAGS.batch_size)
-    loss_plot = []
-    auc_list = []
-    loss_per_epoch = 0
+    
+    
     save_dir = '%s_%s_%s_alpha_%0.2f'%(FLAGS.ver, FLAGS.train_lang, FLAGS.fusion, FLAGS.alpha)
     
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
     
-    save_best = 'best_%s'%(save_dir)
-    
-    if not os.path.exists(save_best):
-        os.mkdir(save_best)
     while (epoch < FLAGS.epochs):
+        loss_per_epoch = 0
+        loss_plot = []
         print('Epoch %03d'%(epoch))
         for idx in tqdm(range(num_of_batches)):
             face_feats, batch_labels = get_batch(idx, FLAGS.batch_size, train_label, face_train)
@@ -148,26 +143,16 @@ def main(face_train, voice_train, train_label, face_test, voice_test):
         loss_per_epoch/=num_of_batches
         
         loss_plot.append(loss_per_epoch)
-        eer, auc = online_evaluation.test(FLAGS, model, face_test, voice_test)
-        eer_list.append(eer)
-        auc_list.append(auc)
         save_checkpoint({
             'epoch': epoch,
-            'state_dict': model.state_dict()}, save_dir, 'checkpoint_%04d_%0.3f.pth.tar'%(epoch, eer*100))
+            'state_dict': model.state_dict()}, save_dir, 'checkpoint_%04d_%0.3f.pth.tar'%(epoch, loss_per_epoch))
 
-        print('==> Epoch: %d/%d Loss: %0.2f Alpha:%0.2f, Min_EER: %0.2f'%(epoch, FLAGS.epochs, loss_per_epoch, FLAGS.alpha, min(eer_list)))
-        
-        if eer <= min(eer_list):
-            min_eer = eer
-            max_auc = auc
-            save_checkpoint({
-            'epoch': epoch,
-            'state_dict': model.state_dict()}, save_best, 'checkpoint.pth.tar')
+        print('==> Epoch: %d/%d Loss: %0.2f Alpha:%0.2f, '%(epoch, FLAGS.epochs, loss_per_epoch, FLAGS.alpha))
         
         loss_per_epoch = 0
         epoch += 1
             
-    return loss_plot, min_eer, max_auc
+    return
     
 class OrthogonalProjectionLoss(nn.Module):
     def __init__(self):
@@ -271,5 +256,4 @@ if __name__ == '__main__':
         torch.cuda.manual_seed(FLAGS.seed)
         
     face_train, voice_train, train_label = read_data(FLAGS)
-    face_test, voice_test = online_evaluation.read_data(FLAGS.ver, FLAGS.train_lang)
-    main(face_train, voice_train, train_label, face_test, voice_test)
+    main(face_train, voice_train, train_label)
