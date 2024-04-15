@@ -23,6 +23,7 @@ Face-voice association is established in cross-modal verification task. The goal
     <td>English train</td>
     <td><b>20.8</b></td>
     <td>24.0</td>
+    <td rowspan="2" align="center"><b>22.0</b></td>
   </tr>
   <tr>
     <td>Hindi train</td>
@@ -43,12 +44,14 @@ Face-voice association is established in cross-modal verification task. The goal
     <td>English train</td>
     <td><b>29.3</b></td>
     <td>37.9</td>
+    <td rowspan="2" align="center"><b>33.4</b></td>
   </tr>
   <tr>
     <td>Urdu train</td>
     <td>40.4</td>
     <td><b>25.8</b></td>
   </tr>
+  
 </table>
 
 
