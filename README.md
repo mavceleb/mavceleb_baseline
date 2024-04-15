@@ -72,7 +72,7 @@ For Voice Embeddings (512-D) we use the method described in [Utterance Level Agg
 Pre extracted features for reproducing the baseline results can be downloaded.
 
 ## Splits and Raw Data
-The raw data and train/test splits can be downloaded [here.](https://drive.google.com/drive/folders/1X8q4LjpII3G6sIexOiBZDd_4hTaxTjto?usp=sharing)
+Download [raw data](https://drive.google.com/drive/folders/1OJyjXJULErvrvzLQmpJn5v8rRo0n_fod?usp=sharing) and [train/test splits](https://drive.google.com/drive/folders/1MEHtEVh9lSa9hNZxjEfNJnE3qrpm_PKw?usp=sharing) 
 
 #### Submission
 
@@ -83,9 +83,8 @@ tog3zj45 voices/English/00001.wav faces/English/00001.jpg
 ky5xfj1d voices/English/00002.wav faces/English/00002.jpg 
 yx4nfa35 voices/English/01062.wav faces/English/01062.jpg 
 bowsaf5e voices/English/01063.wav faces/English/01063.jpg 
-```
-
-We have kept the ground truth for fair evaluation during FAME challenge. Participants are expected to compute and submit a text file including the `id` and `L2 Scores` in the following format:
+``` 
+We have kept the ground truth for fair evaluation during FAME challenge. Participants are expected to compute and submit a text file including the `id` and `L2 Scores` in the following format. We also provide `computeScore.py` to generate sample submission score files. Set `ver` and `heard_lang` accordingly and run the script. For example, if `ver='v1'` and `heard_lang='English'`, the script will generate two files in the given format: `sub_scores_v1_English_heard.txt` and `sub_scores_English_unheard.txt`. The heard scores are for `English` test language whereas unheard scores for language that is unheard by the model i.e. `Urdu`. 
 ```
 ysuvkz41 0.9988
 tog3zj45 0.1146
@@ -96,21 +95,28 @@ bowsaf5e 1.6578
 
 ## Hierarchy:
 ```
-├── feats
+├── dataset
+│ ├── .zip files
+├── preExtracted_vggFace_utteranceLevel_Features
+│ ├── v1
+│ │ ├── Urdu
+│ │ │ ├── .csv and .txt files
 │ ├── v2
-│ │ ├── English_feats
+│ │ ├── Hindi
 │ │ │ ├── .csv and .txt files
-│ │ ├── Hindi_feats
-│ │ │ ├── .csv and .txt files
-├── v2_models
+├── face_voice_association_splits
+│ ├── v1
+│ │ ├── .txt split files
+│ ├── v2
+│ │ ├── .txt split files
+├── v1_models
+│ ├── Urdu_fop_model
+│ │ ├── checkpoints.pth.tar
 │ ├── English_fop_model
 │ │ ├── checkpoints.pth.tar
-│ ├── Hindi_fop_model
-│ │ ├── checkpoints.pth.tar
 ├── main.py
-├── online_evaluation.py
+├── computeScore.py
 ├── retrieval.py
-├── test.py
 ```
 
 # Setup
