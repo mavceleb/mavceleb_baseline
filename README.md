@@ -1,5 +1,7 @@
 # FAME'24 Challenge (Face-voice Association in Multilingual Environments 2024) (Open)
 For more information on challenge please visit [Challenge Webpage](https://mavceleb.github.io/dataset/index.html)
+# Evaluation Plan
+You can find evaluation plan [here](https://arxiv.org/abs/2404.09342)
 # Baseline
 Baseline code for v2 of MAV-Celeb dataset based on _'Fusion and Orthogonal Projection for Improved Face-Voice Association'_ [{paper}](https://ieeexplore.ieee.org/abstract/document/9747704) [{code}](https://github.com/msaadsaeed/FOP)
 ## Task
