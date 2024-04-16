@@ -96,6 +96,8 @@ ky5xfj1d 0.6514
 yx4nfa35 1.5321
 bowsaf5e 1.6578
 ```
+Link to Codalab: [Codalab](https://codalab.lisn.upsaclay.fr/competitions/18534)
+
 
 ## Hierarchy:
 ```
