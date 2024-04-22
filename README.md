@@ -73,7 +73,7 @@ For Face Embeddings (4096-D) we use [VGGFace](https://www.robots.ox.ac.uk/~vgg/s
 ### Voice Features:
 For Voice Embeddings (512-D) we use the method described in [Utterance Level Aggregator](https://arxiv.org/abs/1902.10107). The code we used is released by authors and is [publicly available](https://github.com/WeidiXie/VGG-Speaker-Recognition). We fine tuned the model on v2 split of MAV-Celeb dataset for feature extraction. The pre-trained model on MAV-Celeb ( v2) can be downloaded [here](https://drive.google.com/drive/folders/1ykJ3rAPLN0x1n5nVaw3QVPi9vZXlrfe6?usp=sharing). Run `uttLevelVoiceFeat.py` for voice feature extraction.
 
-Pre extracted features for reproducing the baseline results can be downloaded.
+Pre extracted features for reproducing the baseline results can be downloaded. Currently, progress phhase is running, therefore you can [download]([https://drive.google.com/drive/folders/1OJyjXJULErvrvzLQmpJn5v8rRo0n_fod?usp=sharing](https://drive.google.com/drive/folders/1CvJT-JmVrF0xq-BJLXUdMrtnBBF0rTQE?usp=drive_link)) V2 feature files of faces and voices. 
 
 ## Splits and Raw Data
 Download [raw data](https://drive.google.com/drive/folders/1OJyjXJULErvrvzLQmpJn5v8rRo0n_fod?usp=sharing) and [train/test splits](https://drive.google.com/drive/folders/1MEHtEVh9lSa9hNZxjEfNJnE3qrpm_PKw?usp=sharing) 
