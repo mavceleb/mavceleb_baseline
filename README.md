@@ -88,7 +88,7 @@ ky5xfj1d voices/English/00002.wav faces/English/00002.jpg
 yx4nfa35 voices/English/01062.wav faces/English/01062.jpg 
 bowsaf5e voices/English/01063.wav faces/English/01063.jpg 
 ``` 
-We have kept the ground truth for fair evaluation during FAME challenge. Participants are expected to compute and submit a text file including the `id` and `L2 Scores` in the following format. We also provide `computeScore.py` to generate sample submission score files. Set `ver` and `heard_lang` accordingly and run the script. For example, if `ver='v1'` and `heard_lang='English'`, the script will generate two files in the given format: `sub_scores_v1_English_heard.txt` and `sub_scores_English_unheard.txt`. The heard scores are for `English` test language whereas unheard scores for language that is unheard by the model i.e. `Urdu`. 
+We have kept the ground truth for fair evaluation during FAME challenge. Participants are expected to compute and submit a text file including the `id` and `L2 Scores` in the following format. We also provide `computeScore.py` to generate sample submission score files. Set `ver` and `heard_lang` accordingly and run the script. For example, if `ver='v1'` and `heard_lang='English'`, the script will generate two files in the given format: `sub_scores_English_heard.txt` and `sub_scores_English_unheard.txt`. The heard scores are for `English` test language whereas unheard scores for language that is unheard by the model i.e. `Urdu`. 
 ```
 ysuvkz41 0.9988
 tog3zj45 0.1146
