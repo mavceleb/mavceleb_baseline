@@ -1,7 +1,13 @@
 # FAME'24 Challenge (Face-voice Association in Multilingual Environments 2024)
 
-## $\textcolor{red}{Evaluation \space Phase \space is \space UP}$
-$\textcolor{red}{v1 \space test \space splits, \space features \space and \space models \space are \space now \space availble.}$
+## $\textcolor{red}{Challenge \space Closed!}$
+$\textcolor{red}{Results \space announced. \space Congrats \space to \space winners.}$
+
+| Rank | Team Name  | Primary Contact | Affiliation | Score (EER)|
+| - | - | - | - | - |
+| 1  | HLT  | Tao Ruijie | National University of Singapore | 19.91 |
+| 2  | Audio_Visual  | Wuyang Chen | National University of Defense Technology | 20.51 |
+| 3  | Xaiofei  | Tang Jie Hui | Hefei University of Technology | 21.76 |
 
 For more information on challenge please see [evaluation plan](https://arxiv.org/abs/2404.09342) 
  [Challenge Webpage](https://mavceleb.github.io/dataset/index.html)
@@ -75,9 +81,9 @@ The aim is to study the impact of language on face-voice assoication methods. Fo
 For Face Embeddings (4096-D) we use [VGGFace](https://www.robots.ox.ac.uk/~vgg/software/vgg_face/). The model can be downloaded [here](https://drive.google.com/drive/folders/1ct_TXo2x-1tKGAnGYDaC6XzIPRaVN6J-?usp=sharing). Run `vggFaceFeat.py` for face feature extraction.
 
 ### Voice Features:
-For Voice Embeddings (512-D) we use the method described in [Utterance Level Aggregator](https://arxiv.org/abs/1902.10107). The code we used is released by authors and is [publicly available](https://github.com/WeidiXie/VGG-Speaker-Recognition). We fine tuned the model on v1 and v2 split of MAV-Celeb dataset for feature extraction. The pre-trained model on $\textcolor{red}{MAV-Celeb \space (v1, \space v2)}$ can be downloaded [here](https://drive.google.com/drive/folders/1ykJ3rAPLN0x1n5nVaw3QVPi9vZXlrfe6?usp=sharing). Run `uttLevelVoiceFeat.py` for voice feature extraction.
+For Voice Embeddings (512-D) we use the method described in [Utterance Level Aggregator](https://arxiv.org/abs/1902.10107). The code we used is released by authors and is [publicly available](https://github.com/WeidiXie/VGG-Speaker-Recognition). We fine tuned the model on v1 and v2 split of MAV-Celeb dataset for feature extraction. The pre-trained model on MAV-Celeb (v1, v2) can be downloaded [here](https://drive.google.com/drive/folders/1ykJ3rAPLN0x1n5nVaw3QVPi9vZXlrfe6?usp=sharing). Run `uttLevelVoiceFeat.py` for voice feature extraction.
 
-Pre extracted features for reproducing the baseline results can be downloaded. The $\textcolor{red}{evaluation \space phase}$ is now open, therefore you can download v1, v2 feature files of faces and voices [here.](https://drive.google.com/drive/folders/1LfCxZiAqmsD9sgEMRrJgN5QBr_CL-hzD?usp=sharing)
+Pre extracted features for reproducing the baseline results can be downloaded. You can download v1, v2 feature files of faces and voices [here.](https://drive.google.com/drive/folders/1LfCxZiAqmsD9sgEMRrJgN5QBr_CL-hzD?usp=sharing)
 
 ## Splits and Raw Data
 Download [raw data](https://drive.google.com/drive/folders/1OJyjXJULErvrvzLQmpJn5v8rRo0n_fod?usp=sharing) and [train/test splits](https://drive.google.com/drive/folders/1MEHtEVh9lSa9hNZxjEfNJnE3qrpm_PKw?usp=sharing) 
