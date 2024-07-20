@@ -88,7 +88,9 @@ Pre extracted features for reproducing the baseline results can be downloaded. Y
 ## Splits and Raw Data
 Download [raw data](https://drive.google.com/drive/folders/1OJyjXJULErvrvzLQmpJn5v8rRo0n_fod?usp=sharing) and [train/test splits](https://drive.google.com/drive/folders/1MEHtEVh9lSa9hNZxjEfNJnE3qrpm_PKw?usp=sharing) 
 
-{Update} [Ground Truth labels, splits and feature file](https://drive.google.com/drive/folders/1rlm5Af1JMuyhLzLvGgIX-GZzuN9bzQqO?usp=sharing)
+$\textcolor{red}{Update}$ [Ground Truth labels, splits and feature file](https://drive.google.com/drive/folders/1rlm5Af1JMuyhLzLvGgIX-GZzuN9bzQqO?usp=sharing). Download and place the v1 and v2 folders in ```preExtracted_vggFace_utteranceLevel_Features``` directory and run ```test.py``` to get baseline results.
+
+
 
 #### Submission
 
