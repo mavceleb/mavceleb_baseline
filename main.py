@@ -75,7 +75,7 @@ def init_weights(m):
 
 def main(face_train, voice_train, train_label):
     
-    n_class = 64 if FLAGS.ver == 'v1' else 78
+    n_class = 64 if FLAGS.ver == 'v1' else 78 if FLAGS.ver == 'v2' else 50
     model = FOP(FLAGS, face_train.shape[1], voice_train.shape[1], n_class)
     model.apply(init_weights)
     

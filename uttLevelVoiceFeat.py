@@ -23,12 +23,14 @@ parser.add_argument('--aggregation_mode', default='gvlad', choices=['avg', 'vlad
 # set up learning rate, training loss and optimizer.
 parser.add_argument('--loss', default='softmax', choices=['softmax', 'amsoftmax'], type=str)
 parser.add_argument('--test_type', default='normal', choices=['normal', 'hard', 'extend'], type=str)
+# set up version of the model.
+parser.add_argument('--version', default='v1', choices=['v1', 'v2', 'v3'], type=str)
 
 global args
 args = parser.parse_args()
 
 
-n_classes = 64 if 'v1' else 78
+n_classes = 64 if args.version == 'v1' else 78 if args.version == 'v2' else 50
 
 params = {'dim': (257, None, 1),
               'nfft': 512,

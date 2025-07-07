@@ -44,7 +44,7 @@ def read_data(ver, test_file_face, test_file_voice):
 
 def test(face_test_heard, voice_test_heard, face_test_unheard, voice_test_unheard):
     
-    n_class = 64 if ver == 'v1' else 78
+    n_class = 64 if ver == 'v1' else 78 if ver == 'v2' else 50
     model = FOP(FLAGS, face_test_heard.shape[1], voice_test_heard.shape[1], n_class)
     checkpoint = torch.load(FLAGS.ckpt)
     model.load_state_dict(checkpoint['state_dict'])
