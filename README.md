@@ -1,4 +1,14 @@
-# FAME'25 Challenge (Face-voice Association in Multilingual Environments 2025)
+# FAME'26 Challenge (Face-voice Association in Multilingual Environments 2026)
+
+## $\textcolor{green}{Accepting \space Submissions!}$
+
+$\textcolor{red}{Last \space Year \space Results \space}$
+
+| Rank | Team Name    | Primary Contact | Affiliation                               | Score (EER) | System Description Report                                                                                |
+| ---- | ------------ | --------------- | ----------------------------------------- | ----------- | -------------------------------------------------------------------------------------------------------- |
+| 1    | HLT          | Tao Ruijie      | National University of Singapore          | 19.91       | [Click Here](https://github.com/mavceleb/mavceleb_baseline/blob/main/description_files/1hlt.pdf)         |
+| 2    | Audio_Visual | Wuyang Chen     | National University of Defense Technology | 20.51       | [Click Here](https://github.com/mavceleb/mavceleb_baseline/blob/main/description_files/2audioVisual.pdf) |
+| 3    | Xaiofei      | Tang Jie Hui    | Hefei University of Technology            | 21.76       | [Click Here](https://github.com/mavceleb/mavceleb_baseline/blob/main/description_files/3xaiofei.pdf)     |
 
 For more information on challenge please see [evaluation plan](https://arxiv.org/abs/2404.09342)
 [Challenge Webpage](https://mavceleb.github.io/dataset/index.html)
@@ -110,7 +120,7 @@ yx4nfa35 1.5321
 bowsaf5e 1.6578
 ```
 
-Link to Codalab/Codabench: [Codalab](https://www.codabench.org/competitions/9467/)
+Link to Codalab: [Codalab/Codabench](https://www.codabench.org/competitions/9467/)
 
 ## Hierarchy:
 
