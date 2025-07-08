@@ -19,91 +19,61 @@ Face-voice association is established in cross-modal verification task. The goal
 
 <table border="1" align='center'>
   <tr>
-    <td colspan="5" align="center"><b>MAV-Celeb v2 (EH)</b></td>
-  </tr>
-  <tr>
-    <td>Method</td>
-    <td>Configuration</td>
-    <td align='center'>English test<br>(EER)</td>
-    <td align='center'>Hindi test<br>(EER)</td>
-    <td align='center'>Average</td>
-  </tr>
-  <tr>
-    <td rowspan="2" align="center">FOP</td>
-    <td>English train</td>
-    <td><b>20.8</b></td>
-    <td>24.0</td>
-    <td rowspan="2" align="center"><b>22.0</b></td>
-  </tr>
-  <tr>
-    <td>Hindi train</td>
-    <td>24.0</td>
-    <td><b>19.3</b></td>
-  </tr>
-  <tr>
-    <td rowspan="2" align="center">Baseline</td>
-    <td>English train</td>
-    <td>35.7</td>
-    <td>36.7</td>
-    <td rowspan="2" align="center">36.2</td>
-  </tr>
-  <tr>
-    <td>Hindi train</td>
-    <td>38.9</td>
-    <td>37.3</td>
-  </tr>
-
-  <tr>
-    <td colspan="5" align="center"><b>MAV-Celeb v1 (EU)</b></td>
+    <td colspan="4" align="center"><b>MAV-Celeb v1 (EU)</b></td>
   </tr>
   <tr>
     <td>Method</td>
     <td>Configuration</td>
     <td align='center'>English test<br>(EER)</td>
     <td align='center'>Urdu test<br>(EER)</td>
-    <td align='center'>Average</td>
   </tr>
   <tr>
-    <td rowspan="2" align="center">FOP</td>
-    <td>English train</td>
-    <td><b>29.3</b></td>
-    <td>37.9</td>
-    <td rowspan="2" align="center"><b>33.4</b></td>
-  </tr>
-  <tr>
-    <td>Urdu train</td>
-    <td>40.4</td>
-    <td><b>25.8</b></td>
-  </tr>
-  <tr>
-    <td rowspan="2" align="center">Baseline</td>
+    <td rowspan="2" align="center">-</td>
     <td>English train</td>
     <td>45.1</td>
     <td>48.3</td>
-    <td rowspan="2" align="center">46.7</td>
   </tr>
   <tr>
     <td>Urdu train</td>
     <td>47.0</td>
     <td>44.3</td>
   </tr>
-
+  
   <tr>
-    <td colspan="5" align="center"><b>MAV-Celeb v3 (EG)</b></td>
+    <td colspan="4" align="center"><b>MAV-Celeb v2 (EH)</b></td>
+  </tr>
+  <tr>
+    <td>Method</td>
+    <td>Configuration</td>
+    <td align='center'>English test<br>(EER)</td>
+    <td align='center'>Hindi test<br>(EER)</td>
+  </tr>
+  <tr>
+    <td rowspan="2" align="center">-</td>
+    <td>English train</td>
+    <td>35.7</td>
+    <td>36.7</td>
+  </tr>
+  <tr>
+    <td>Hindi train</td>
+    <td>38.9</td>
+    <td>37.3</td>
+  </tr>
+  
+  <tr>
+    <td colspan="4" align="center"><b>MAV-Celeb V3 (EG)</b></td>
   </tr>
   <tr>
     <td>Method</td>
     <td>Configuration</td>
     <td align='center'>English test<br>(EER)</td>
     <td align='center'>German test<br>(EER)</td>
-    <td align='center'>Average</td>
   </tr>
   <tr>
-    <td rowspan="2" align="center">Baseline</td>
+    <td rowspan="2" align="center">-</td>
     <td>English train</td>
     <td>34.5</td>
     <td>43.7</td>
-    <td rowspan="2" align="center">39.8</td>
   </tr>
   <tr>
     <td>German train</td>
@@ -111,6 +81,7 @@ Face-voice association is established in cross-modal verification task. The goal
     <td>39.6</td>
   </tr>
 </table>
+
 ## Evaluation Protocol
 
 The aim is to study the impact of language on face-voice assoication methods. For this we train a model X on one language (English) then test on same language (English) and unheard language (Hindi). Similarly we train a model Y on one language (Hindi) then test the model on same language (Hindi) and unheard language (English) as shown in figure below. It is also important to note that the test identities are also unheard by the network meaning the test set is disjoint from the train network. For example: v2 has 84 identities both having English and Hindi voice samples. We have separated 6 identities for test set while leverage reamining for training the model.<br>
