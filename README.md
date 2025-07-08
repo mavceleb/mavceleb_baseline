@@ -2,14 +2,6 @@
 
 ## $\textcolor{green}{Accepting \space Submissions!}$
 
-$\textcolor{red}{Last \space Year \space Results \space}$
-
-| Rank | Team Name    | Primary Contact | Affiliation                               | Score (EER) | System Description Report                                                                                |
-| ---- | ------------ | --------------- | ----------------------------------------- | ----------- | -------------------------------------------------------------------------------------------------------- |
-| 1    | HLT          | Tao Ruijie      | National University of Singapore          | 19.91       | [Click Here](https://github.com/mavceleb/mavceleb_baseline/blob/main/description_files/1hlt.pdf)         |
-| 2    | Audio_Visual | Wuyang Chen     | National University of Defense Technology | 20.51       | [Click Here](https://github.com/mavceleb/mavceleb_baseline/blob/main/description_files/2audioVisual.pdf) |
-| 3    | Xaiofei      | Tang Jie Hui    | Hefei University of Technology            | 21.76       | [Click Here](https://github.com/mavceleb/mavceleb_baseline/blob/main/description_files/3xaiofei.pdf)     |
-
 For more information on challenge please see [evaluation plan](https://arxiv.org/abs/2404.09342)
 [Challenge Webpage](https://mavceleb.github.io/dataset/index.html)
 
@@ -27,13 +19,14 @@ Face-voice association is established in cross-modal verification task. The goal
 
 <table border="1" align='center'>
   <tr>
-    <td colspan="4" align="center" ><b>V2-EH</b></td>
+    <td colspan="5" align="center"><b>MAV-Celeb v2 (EH)</b></td>
   </tr>
   <tr>
     <td>Method</td>
     <td>Configuration</td>
     <td align='center'>English test<br>(EER)</td>
     <td align='center'>Hindi test<br>(EER)</td>
+    <td align='center'>Average</td>
   </tr>
   <tr>
     <td rowspan="2" align="center">FOP</td>
@@ -48,13 +41,27 @@ Face-voice association is established in cross-modal verification task. The goal
     <td><b>19.3</b></td>
   </tr>
   <tr>
-    <td colspan="4" align="center"><b>V1-EU</b></td>
+    <td rowspan="2" align="center">Baseline</td>
+    <td>English train</td>
+    <td>35.7</td>
+    <td>36.7</td>
+    <td rowspan="2" align="center">36.2</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td>Hindi train</td>
+    <td>38.9</td>
+    <td>37.3</td>
+  </tr>
+
+  <tr>
+    <td colspan="5" align="center"><b>MAV-Celeb v1 (EU)</b></td>
+  </tr>
+  <tr>
+    <td>Method</td>
+    <td>Configuration</td>
     <td align='center'>English test<br>(EER)</td>
     <td align='center'>Urdu test<br>(EER)</td>
+    <td align='center'>Average</td>
   </tr>
   <tr>
     <td rowspan="2" align="center">FOP</td>
@@ -68,9 +75,42 @@ Face-voice association is established in cross-modal verification task. The goal
     <td>40.4</td>
     <td><b>25.8</b></td>
   </tr>
-  
-</table>
+  <tr>
+    <td rowspan="2" align="center">Baseline</td>
+    <td>English train</td>
+    <td>45.1</td>
+    <td>48.3</td>
+    <td rowspan="2" align="center">46.7</td>
+  </tr>
+  <tr>
+    <td>Urdu train</td>
+    <td>47.0</td>
+    <td>44.3</td>
+  </tr>
 
+  <tr>
+    <td colspan="5" align="center"><b>MAV-Celeb v3 (EG)</b></td>
+  </tr>
+  <tr>
+    <td>Method</td>
+    <td>Configuration</td>
+    <td align='center'>English test<br>(EER)</td>
+    <td align='center'>German test<br>(EER)</td>
+    <td align='center'>Average</td>
+  </tr>
+  <tr>
+    <td rowspan="2" align="center">Baseline</td>
+    <td>English train</td>
+    <td>34.5</td>
+    <td>43.7</td>
+    <td rowspan="2" align="center">39.8</td>
+  </tr>
+  <tr>
+    <td>German train</td>
+    <td>43.2</td>
+    <td>39.6</td>
+  </tr>
+</table>
 ## Evaluation Protocol
 
 The aim is to study the impact of language on face-voice assoication methods. For this we train a model X on one language (English) then test on same language (English) and unheard language (Hindi). Similarly we train a model Y on one language (Hindi) then test the model on same language (Hindi) and unheard language (English) as shown in figure below. It is also important to note that the test identities are also unheard by the network meaning the test set is disjoint from the train network. For example: v2 has 84 identities both having English and Hindi voice samples. We have separated 6 identities for test set while leverage reamining for training the model.<br>
@@ -95,8 +135,6 @@ Pre extracted features for reproducing the baseline results can be downloaded. Y
 ## Splits and Raw Data
 
 Download [raw data](https://drive.google.com/drive/folders/1OJyjXJULErvrvzLQmpJn5v8rRo0n_fod?usp=sharing) and [train/test splits](https://drive.google.com/drive/folders/1MEHtEVh9lSa9hNZxjEfNJnE3qrpm_PKw?usp=sharing)
-
-$\textcolor{red}{Update}$ [Ground Truth labels, splits and feature file](https://drive.google.com/drive/folders/1rlm5Af1JMuyhLzLvGgIX-GZzuN9bzQqO?usp=sharing). Download and place the v1 and v2 folders in `preExtracted_vggFace_utteranceLevel_Features` directory and run `test.py` to get baseline results.
 
 #### Submission
 
@@ -134,10 +172,15 @@ Link to Codalab: [Codalab/Codabench](https://www.codabench.org/competitions/9467
 │ ├── v2
 │ │ ├── Hindi
 │ │ │ ├── .csv and .txt files
+│ ├── v3
+│ │ ├── German
+│ │ │ ├── .csv and .txt files
 ├── face_voice_association_splits
 │ ├── v1
 │ │ ├── .txt split files
 │ ├── v2
+│ │ ├── .txt split files
+│ ├── v3
 │ │ ├── .txt split files
 ├── v1_models
 │ ├── Urdu_fop_model
@@ -167,3 +210,11 @@ To install PyTorch with GPU support:
 ```
 conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch
 ```
+
+$\textcolor{red}{Last \space Year \space Results \space}$
+
+| Rank | Team Name    | Primary Contact | Affiliation                               | Score (EER) | System Description Report                                                                                |
+| ---- | ------------ | --------------- | ----------------------------------------- | ----------- | -------------------------------------------------------------------------------------------------------- |
+| 1    | HLT          | Tao Ruijie      | National University of Singapore          | 19.91       | [Click Here](https://github.com/mavceleb/mavceleb_baseline/blob/main/description_files/1hlt.pdf)         |
+| 2    | Audio_Visual | Wuyang Chen     | National University of Defense Technology | 20.51       | [Click Here](https://github.com/mavceleb/mavceleb_baseline/blob/main/description_files/2audioVisual.pdf) |
+| 3    | Xaiofei      | Tang Jie Hui    | Hefei University of Technology            | 21.76       | [Click Here](https://github.com/mavceleb/mavceleb_baseline/blob/main/description_files/3xaiofei.pdf)     |
