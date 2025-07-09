@@ -10,8 +10,8 @@ from sklearn import metrics
 from scipy.optimize import brentq
 from scipy.interpolate import interp1d
 
-ver = 'v2'
-heard_lang = 'Hindi'
+ver = 'v3'
+heard_lang = 'German'
 
 if (
     (ver == 'v1' and heard_lang not in ['English', 'Urdu']) or
