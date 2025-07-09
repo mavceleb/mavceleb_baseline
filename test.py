@@ -13,16 +13,27 @@ from scipy.interpolate import interp1d
 ver = 'v2'
 heard_lang = 'Hindi'
 
-if (ver == 'v1' and heard_lang == 'Hindi') or (ver == 'v2' and heard_lang == 'Urdu'):
-    raise ValueError("Contradictory combination: ver={} and heard_lang={}".format(ver, heard_lang))
+if (
+    (ver == 'v1' and heard_lang not in ['English', 'Urdu']) or
+    (ver == 'v2' and heard_lang not in ['English', 'Hindi']) or
+    (ver == 'v3' and heard_lang not in ['English', 'German'])
+):
+    raise ValueError(f"Contradictory combination: ver={ver} and heard_lang={heard_lang}")
 
-assert ver == 'v1' or ver == 'v2', f"Invalid value for ver: {ver}"
-assert heard_lang == 'Urdu' or heard_lang == 'Hindi' or heard_lang == 'English', f"Invalid value for lang: {heard_lang}"
+assert ver in ['v1', 'v2', 'v3'], f"Invalid value for ver: {ver}"
+assert heard_lang in ['English', 'Urdu', 'Hindi', 'German'], f"Invalid value for heard_lang: {heard_lang}"
 
 if ver == 'v1':
+    assert heard_lang in ['English', 'Urdu'], f"Invalid combination: v1 can't be paired with {heard_lang}"
     unheard_lang = 'Urdu' if heard_lang == 'English' else 'English'
-if ver == 'v2':
+
+elif ver == 'v2':
+    assert heard_lang in ['English', 'Hindi'], f"Invalid combination: v2 can't be paired with {heard_lang}"
     unheard_lang = 'Hindi' if heard_lang == 'English' else 'English'
+
+elif ver == 'v3':
+    assert heard_lang in ['English', 'German'], f"Invalid combination: v3 can't be paired with {heard_lang}"
+    unheard_lang = 'German' if heard_lang == 'English' else 'English'
 
 print('Heard_Language: %s'%(heard_lang))
 print('Unheard Language: %s'%(unheard_lang))
