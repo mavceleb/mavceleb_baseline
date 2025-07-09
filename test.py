@@ -89,14 +89,22 @@ def test(face_test_heard, voice_test_heard, face_test_unheard, voice_test_unhear
     
         with open('./preExtracted_vggFace_utteranceLevel_Features/%s/%s_test.txt'%(ver, heard_lang)) as f:
             for dat in f:
-                dat = dat.split(' ')[1]
-                gt_heard.append(int(dat))
+                try:
+                    dat = dat.split(' ')[1]
+                    gt_heard.append(int(dat))
+                except IndexError:
+                    dat = dat.split(' ')[0]
+                    gt_heard.append(int(dat))
         
         with open('./preExtracted_vggFace_utteranceLevel_Features/%s/%s_test.txt'%(ver, unheard_lang)) as f:
             for dat in f:
-                dat = dat.split(' ')[1]
-                gt_unheard.append(int(dat))
-        
+                try:
+                    dat = dat.split(' ')[1]
+                    gt_unheard.append(int(dat))
+                except IndexError:
+                    dat = dat.split(' ')[0]
+                    gt_unheard.append(int(dat))
+
         fpr, tpr, thresholds = metrics.roc_curve(gt_heard, -scores_heard)
         eer_heard = brentq(lambda x : 1. - x - interp1d(fpr, tpr)(x), 0., 1.)
         
