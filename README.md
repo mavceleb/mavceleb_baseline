@@ -7,7 +7,7 @@ For more information on challenge please see [evaluation plan](https://arxiv.org
 
 # Baseline
 
-Baseline code for v2 & v3 of MAV-Celeb dataset based on _'Fusion and Orthogonal Projection for Improved Face-Voice Association'_ [{paper}](https://ieeexplore.ieee.org/abstract/document/9747704) [{code}](https://github.com/msaadsaeed/FOP)
+Baseline code for v3 of MAV-Celeb dataset based on _'Fusion and Orthogonal Projection for Improved Face-Voice Association'_ [{paper}](https://ieeexplore.ieee.org/abstract/document/9747704) [{code}](https://github.com/msaadsaeed/FOP)
 
 ## Task
 
@@ -40,32 +40,7 @@ Face-voice association is established in cross-modal verification task. The goal
     <td>47.0</td>
     <td>44.3</td>
   </tr>
-  
-  <tr>
-    <td colspan="4" align="center"><b>MAV-Celeb v2 (EH)</b></td>
-  </tr>
-  <tr>
-    <td>Method</td>
-    <td>Configuration</td>
-    <td align='center'>English test<br>(EER)</td>
-    <td align='center'>Hindi test<br>(EER)</td>
-    <td align='center'></td>
-
-  </tr>
-  <tr>
-    <td rowspan="2" align="center">FOP</td>
-    <td>English train</td>
-    <td>35.7</td>
-    <td>36.7</td>
-    <td rowspan="2" align="center">37.2</td>
-
-  </tr>
-  <tr>
-    <td>Hindi train</td>
-    <td>38.9</td>
-    <td>37.3</td>
-  </tr>
-  
+    
   <tr>
     <td colspan="4" align="center"><b>MAV-Celeb V3 (EG)</b></td>
   </tr>
@@ -92,7 +67,7 @@ Face-voice association is established in cross-modal verification task. The goal
 
 ## Evaluation Protocol
 
-The aim is to study the impact of language on face-voice assoication methods. For this we train a model X on one language (English) then test on same language (English) and unheard language (Hindi). Similarly we train a model Y on one language (Hindi) then test the model on same language (Hindi) and unheard language (English) as shown in figure below. It is also important to note that the test identities are also unheard by the network meaning the test set is disjoint from the train network. For example: v2 has 84 identities both having English and Hindi voice samples. We have separated 6 identities for test set while leverage reamining for training the model.<br>
+The aim is to study the impact of language on face-voice assoication methods. For this we train a model X on one language (English) then test on same language (English) and unheard language (German). Similarly we train a model Y on one language (German) then test the model on same language (German) and unheard language (English) as shown in figure below. It is also important to note that the test identities are also unheard by the network meaning the test set is disjoint from the train network. <br>
 
 <p align='center'>
   <img src='https://github.com/mavceleb/mavceleb_baseline/blob/main/images/eng_heard.JPG' width=40%>
@@ -107,9 +82,9 @@ For Face Embeddings (4096-D) we use [VGGFace](https://www.robots.ox.ac.uk/~vgg/s
 
 ### Voice Features:
 
-For Voice Embeddings (512-D) we use the method described in [Utterance Level Aggregator](https://arxiv.org/abs/1902.10107). The code we used is released by authors and is [publicly available](https://github.com/WeidiXie/VGG-Speaker-Recognition). We fine tuned the model on v1, v2 and v3 split of MAV-Celeb dataset for feature extraction. The pre-trained model on MAV-Celeb (v1, v2, v3) can be downloaded [here](https://drive.google.com/drive/folders/1ykJ3rAPLN0x1n5nVaw3QVPi9vZXlrfe6?usp=sharing). Run `uttLevelVoiceFeat.py` for voice feature extraction.
+For Voice Embeddings (512-D) we use the method described in [Utterance Level Aggregator](https://arxiv.org/abs/1902.10107). The code we used is released by authors and is [publicly available](https://github.com/WeidiXie/VGG-Speaker-Recognition). We fine tuned the model on v1 and v3 split of MAV-Celeb dataset for feature extraction. The pre-trained model on MAV-Celeb (v1, v3) can be downloaded [here](https://drive.google.com/drive/folders/1ykJ3rAPLN0x1n5nVaw3QVPi9vZXlrfe6?usp=sharing). Run `uttLevelVoiceFeat.py` for voice feature extraction.
 
-Pre extracted features for reproducing the baseline results can be downloaded. You can download v1, v2 and v3 feature files of faces and voices [here.](https://drive.google.com/drive/folders/1LfCxZiAqmsD9sgEMRrJgN5QBr_CL-hzD?usp=sharing)
+Pre extracted features for reproducing the baseline results can be downloaded. You can download v1 and v3 feature files of faces and voices [here.](https://drive.google.com/drive/folders/1LfCxZiAqmsD9sgEMRrJgN5QBr_CL-hzD?usp=sharing)
 
 ## Splits and Raw Data
 
@@ -117,7 +92,7 @@ Download [raw data](https://drive.google.com/drive/folders/1OJyjXJULErvrvzLQmpJn
 
 #### Submission
 
-We provide both train and test splits of MAV-Celeb dataset. For v1, v2, v3, the test files are in format as below:
+We provide both train and test splits of MAV-Celeb dataset. For v1, v3, the test files are in format as below:
 
 ```
 ysuvkz41 voices/English/00000.wav faces/English/00000.jpg
@@ -148,16 +123,11 @@ Link to Codalab: [Codalab/Codabench](https://www.codabench.org/competitions/9467
 │ ├── v1
 │ │ ├── Urdu
 │ │ │ ├── .csv and .txt files
-│ ├── v2
-│ │ ├── Hindi
-│ │ │ ├── .csv and .txt files
 │ ├── v3
 │ │ ├── German
 │ │ │ ├── .csv and .txt files
 ├── face_voice_association_splits
 │ ├── v1
-│ │ ├── .txt split files
-│ ├── v2
 │ │ ├── .txt split files
 │ ├── v3
 │ │ ├── .txt split files
@@ -190,7 +160,7 @@ To install PyTorch with GPU support:
 conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch
 ```
 
-$\textcolor{red}{Last \space Year \space Results \space}$
+# Last Year Results
 
 | Rank | Team Name    | Primary Contact | Affiliation                               | Score (EER) | System Description Report                                                                                |
 | ---- | ------------ | --------------- | ----------------------------------------- | ----------- | -------------------------------------------------------------------------------------------------------- |
