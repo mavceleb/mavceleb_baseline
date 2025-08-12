@@ -2,7 +2,7 @@
 
 ## $\textcolor{green}{Accepting \space Submissions!}$
 
-For more information on challenge please see [evaluation plan](https://arxiv.org/abs/2404.09342)
+For more information on challenge please see [evaluation plan]((https://arxiv.org/abs/2508.04592)
 [Challenge Webpage](https://mavceleb.github.io/dataset/index.html)
 
 # Baseline
