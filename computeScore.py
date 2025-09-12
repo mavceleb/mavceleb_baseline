@@ -7,8 +7,8 @@ from torch.autograd import Variable
 import pandas as pd
 from retrieval_model import FOP
 
-ver = 'v2'
-heard_lang = 'German'
+ver = 'v1'
+heard_lang = 'English'
 
 
 if (
@@ -95,7 +95,7 @@ def test(face_test_heard, voice_test_heard, face_test_unheard, voice_test_unhear
             for i, dat in enumerate(scores_heard):
                 f.write('%s %f\n'%(keys_heard[i], dat))
                 
-        with open('sub_score_%s_%s_unheard.txt'%(ver, heard_lang), 'w') as f:
+        with open('sub_score_%s_%s_unheard.txt'%(ver, unheard_lang), 'w') as f:
             for i, dat in enumerate(scores_unheard):
                 f.write('%s %f\n'%(keys_unheard[i], dat))
         
@@ -125,4 +125,5 @@ if __name__ == '__main__':
     test_file_face = './preExtracted_vggFace_utteranceLevel_Features/%s/%s/%s_faces_unheard_test.csv'%(ver, heard_lang, unheard_lang)
     test_file_voice = './preExtracted_vggFace_utteranceLevel_Features/%s/%s/%s_voices_unheard_test.csv'%(ver, heard_lang, unheard_lang)
     face_test_unheard, voice_test_unheard = read_data(ver, test_file_face, test_file_voice)
+
     test(face_test_heard, voice_test_heard, face_test_unheard, voice_test_unheard)
