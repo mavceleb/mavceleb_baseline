@@ -31,14 +31,14 @@ Face-voice association is established in cross-modal verification task. The goal
   <tr>
     <td rowspan="2" align="center">FOP</td>
     <td>English train</td>
-    <td>45.1</td>
-    <td>48.3</td>
-    <td rowspan="2" align="center">46.2</td>
+    <td>29.3</td>
+    <td>37.9</td>
+    <td rowspan="2" align="center">33.4</td>
   </tr>
   <tr>
     <td>Urdu train</td>
-    <td>47.0</td>
-    <td>44.3</td>
+    <td>40.4</td>
+    <td>25.8</td>
   </tr>
     
   <tr>
